@@ -1,7 +1,9 @@
 package com.example.demo.dao;
 
 import com.example.demo.pojo.Composition;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Result;
@@ -18,8 +20,8 @@ public interface CompositionMapper {
      * @mbg.generated Thu Mar 02 10:40:26 CST 2023
      */
     @Delete({
-        "delete from composition",
-        "where idcomposition = #{idcomposition,jdbcType=INTEGER}"
+            "delete from composition",
+            "where idcomposition = #{idcomposition,jdbcType=INTEGER}"
     })
     int deleteByPrimaryKey(Integer idcomposition);
 
@@ -30,8 +32,8 @@ public interface CompositionMapper {
      * @mbg.generated Thu Mar 02 10:40:26 CST 2023
      */
     @Insert({
-        "insert into composition (idcomposition, content)",
-        "values (#{idcomposition,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR})"
+            "insert into composition (idcomposition, content)",
+            "values (#{idcomposition,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR})"
     })
     int insert(Composition row);
 
@@ -42,14 +44,14 @@ public interface CompositionMapper {
      * @mbg.generated Thu Mar 02 10:40:26 CST 2023
      */
     @Select({
-        "select",
-        "idcomposition, content",
-        "from composition",
-        "where idcomposition = #{idcomposition,jdbcType=INTEGER}"
+            "select",
+            "idcomposition, content",
+            "from composition",
+            "where idcomposition = #{idcomposition,jdbcType=INTEGER}"
     })
     @Results({
-        @Result(column="idcomposition", property="idcomposition", jdbcType=JdbcType.INTEGER, id=true),
-        @Result(column="content", property="content", jdbcType=JdbcType.VARCHAR)
+            @Result(column = "idcomposition", property = "idcomposition", jdbcType = JdbcType.INTEGER, id = true),
+            @Result(column = "content", property = "content", jdbcType = JdbcType.VARCHAR)
     })
     Composition selectByPrimaryKey(Integer idcomposition);
 
@@ -60,14 +62,14 @@ public interface CompositionMapper {
      * @mbg.generated Thu Mar 02 10:40:26 CST 2023
      */
     @Select({
-        "select",
-        "idcomposition, content",
-        "from composition",
-        "order by age desc,username asc"
+            "select",
+            "idcomposition, content",
+            "from composition",
+            "order by age desc,username asc"
     })
     @Results({
-        @Result(column="idcomposition", property="idcomposition", jdbcType=JdbcType.INTEGER, id=true),
-        @Result(column="content", property="content", jdbcType=JdbcType.VARCHAR)
+            @Result(column = "idcomposition", property = "idcomposition", jdbcType = JdbcType.INTEGER, id = true),
+            @Result(column = "content", property = "content", jdbcType = JdbcType.VARCHAR)
     })
     List<Composition> selectAll();
 
@@ -78,9 +80,21 @@ public interface CompositionMapper {
      * @mbg.generated Thu Mar 02 10:40:26 CST 2023
      */
     @Update({
-        "update composition",
-        "set content = #{content,jdbcType=VARCHAR}",
-        "where idcomposition = #{idcomposition,jdbcType=INTEGER}"
+            "update composition",
+            "set content = #{content,jdbcType=VARCHAR}",
+            "where idcomposition = #{idcomposition,jdbcType=INTEGER}"
     })
     int updateByPrimaryKey(Composition row);
+
+    @Select({
+            "select",
+            "idcomposition, content",
+            "from composition",
+            "limit #{position,jdbcType=INTEGER},5"
+    })
+    @Results({
+            @Result(column = "idcomposition", property = "idcomposition", jdbcType = JdbcType.INTEGER, id = true),
+            @Result(column = "content", property = "content", jdbcType = JdbcType.VARCHAR)
+    })
+    List<Composition> selectCList(int position);
 }

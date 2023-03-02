@@ -114,12 +114,13 @@ public interface StackMapper {
             "select distinct",
             "bookname",
             "from stack",
-            "where level = #{level,jdbcType=VARCHAR}"
+            "where level = #{level,jdbcType=VARCHAR}",
+            "limit #{position,jdbcType=INTEGER},20"
     })
     @Results({
             @Result(column = "bookname", property = "bookname", jdbcType = JdbcType.VARCHAR),
     })
-    List<String> selectBookNameByLevel(String level);
+    List<String> selectBookNameByLevel(String level, int position);
 
     @Select({
             "select",

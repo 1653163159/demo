@@ -7,7 +7,7 @@ import java.util.List;
 public interface StackService {
     public List<String> getAllBookName();
 
-    public List<String> getBookNameByLevel(String level);
+    public List<String> getBookNameByLevel(String level, int position);
 
     public List<Stack> getBookChapter(String bookName);
 }

@@ -11,9 +11,9 @@ public class StackController {
     @Autowired
     StackService stackService;
 
-    @RequestMapping(value = "/rest/getBookNameByLevel/{level}")
-    public Object getBookNameByLevel(@PathVariable("level") String level) {
-        return stackService.getBookNameByLevel(level);
+    @RequestMapping(value = "/rest/getBookNameByLevel/{level}/{position}")
+    public Object getBookNameByLevel(@PathVariable("level") String level, @PathVariable("position") int position) {
+        return stackService.getBookNameByLevel(level, position);
     }
 
     @RequestMapping(value = "/rest/getChapterList/{bookname}")

@@ -1,7 +1,9 @@
 package com.example.demo.dao;
 
 import com.example.demo.pojo.Quiz;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Result;
@@ -18,8 +20,8 @@ public interface QuizMapper {
      * @mbg.generated Thu Mar 02 10:37:07 CST 2023
      */
     @Delete({
-        "delete from quiz",
-        "where id = #{id,jdbcType=INTEGER}"
+            "delete from quiz",
+            "where id = #{id,jdbcType=INTEGER}"
     })
     int deleteByPrimaryKey(Integer id);
 
@@ -30,16 +32,16 @@ public interface QuizMapper {
      * @mbg.generated Thu Mar 02 10:37:07 CST 2023
      */
     @Insert({
-        "insert into quiz (id, type, ",
-        "content, optiona, ",
-        "optionb, optionc, ",
-        "optiond, answer, ",
-        "level)",
-        "values (#{id,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, ",
-        "#{content,jdbcType=VARCHAR}, #{optiona,jdbcType=VARCHAR}, ",
-        "#{optionb,jdbcType=VARCHAR}, #{optionc,jdbcType=VARCHAR}, ",
-        "#{optiond,jdbcType=VARCHAR}, #{answer,jdbcType=VARCHAR}, ",
-        "#{level,jdbcType=VARCHAR})"
+            "insert into quiz (id, type, ",
+            "content, optiona, ",
+            "optionb, optionc, ",
+            "optiond, answer, ",
+            "level)",
+            "values (#{id,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, ",
+            "#{content,jdbcType=VARCHAR}, #{optiona,jdbcType=VARCHAR}, ",
+            "#{optionb,jdbcType=VARCHAR}, #{optionc,jdbcType=VARCHAR}, ",
+            "#{optiond,jdbcType=VARCHAR}, #{answer,jdbcType=VARCHAR}, ",
+            "#{level,jdbcType=VARCHAR})"
     })
     int insert(Quiz row);
 
@@ -50,21 +52,21 @@ public interface QuizMapper {
      * @mbg.generated Thu Mar 02 10:37:07 CST 2023
      */
     @Select({
-        "select",
-        "id, type, content, optiona, optionb, optionc, optiond, answer, level",
-        "from quiz",
-        "where id = #{id,jdbcType=INTEGER}"
+            "select",
+            "id, type, content, optiona, optionb, optionc, optiond, answer, level",
+            "from quiz",
+            "where id = #{id,jdbcType=INTEGER}"
     })
     @Results({
-        @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
-        @Result(column="type", property="type", jdbcType=JdbcType.VARCHAR),
-        @Result(column="content", property="content", jdbcType=JdbcType.VARCHAR),
-        @Result(column="optiona", property="optiona", jdbcType=JdbcType.VARCHAR),
-        @Result(column="optionb", property="optionb", jdbcType=JdbcType.VARCHAR),
-        @Result(column="optionc", property="optionc", jdbcType=JdbcType.VARCHAR),
-        @Result(column="optiond", property="optiond", jdbcType=JdbcType.VARCHAR),
-        @Result(column="answer", property="answer", jdbcType=JdbcType.VARCHAR),
-        @Result(column="level", property="level", jdbcType=JdbcType.VARCHAR)
+            @Result(column = "id", property = "id", jdbcType = JdbcType.INTEGER, id = true),
+            @Result(column = "type", property = "type", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "content", property = "content", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "optiona", property = "optiona", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "optionb", property = "optionb", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "optionc", property = "optionc", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "optiond", property = "optiond", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "answer", property = "answer", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "level", property = "level", jdbcType = JdbcType.VARCHAR)
     })
     Quiz selectByPrimaryKey(Integer id);
 
@@ -75,21 +77,21 @@ public interface QuizMapper {
      * @mbg.generated Thu Mar 02 10:37:07 CST 2023
      */
     @Select({
-        "select",
-        "id, type, content, optiona, optionb, optionc, optiond, answer, level",
-        "from quiz",
-        "order by age desc,username asc"
+            "select",
+            "id, type, content, optiona, optionb, optionc, optiond, answer, level",
+            "from quiz",
+            "order by age desc,username asc"
     })
     @Results({
-        @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
-        @Result(column="type", property="type", jdbcType=JdbcType.VARCHAR),
-        @Result(column="content", property="content", jdbcType=JdbcType.VARCHAR),
-        @Result(column="optiona", property="optiona", jdbcType=JdbcType.VARCHAR),
-        @Result(column="optionb", property="optionb", jdbcType=JdbcType.VARCHAR),
-        @Result(column="optionc", property="optionc", jdbcType=JdbcType.VARCHAR),
-        @Result(column="optiond", property="optiond", jdbcType=JdbcType.VARCHAR),
-        @Result(column="answer", property="answer", jdbcType=JdbcType.VARCHAR),
-        @Result(column="level", property="level", jdbcType=JdbcType.VARCHAR)
+            @Result(column = "id", property = "id", jdbcType = JdbcType.INTEGER, id = true),
+            @Result(column = "type", property = "type", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "content", property = "content", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "optiona", property = "optiona", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "optionb", property = "optionb", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "optionc", property = "optionc", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "optiond", property = "optiond", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "answer", property = "answer", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "level", property = "level", jdbcType = JdbcType.VARCHAR)
     })
     List<Quiz> selectAll();
 
@@ -100,16 +102,36 @@ public interface QuizMapper {
      * @mbg.generated Thu Mar 02 10:37:07 CST 2023
      */
     @Update({
-        "update quiz",
-        "set type = #{type,jdbcType=VARCHAR},",
-          "content = #{content,jdbcType=VARCHAR},",
-          "optiona = #{optiona,jdbcType=VARCHAR},",
-          "optionb = #{optionb,jdbcType=VARCHAR},",
-          "optionc = #{optionc,jdbcType=VARCHAR},",
-          "optiond = #{optiond,jdbcType=VARCHAR},",
-          "answer = #{answer,jdbcType=VARCHAR},",
-          "level = #{level,jdbcType=VARCHAR}",
-        "where id = #{id,jdbcType=INTEGER}"
+            "update quiz",
+            "set type = #{type,jdbcType=VARCHAR},",
+            "content = #{content,jdbcType=VARCHAR},",
+            "optiona = #{optiona,jdbcType=VARCHAR},",
+            "optionb = #{optionb,jdbcType=VARCHAR},",
+            "optionc = #{optionc,jdbcType=VARCHAR},",
+            "optiond = #{optiond,jdbcType=VARCHAR},",
+            "answer = #{answer,jdbcType=VARCHAR},",
+            "level = #{level,jdbcType=VARCHAR}",
+            "where id = #{id,jdbcType=INTEGER}"
     })
     int updateByPrimaryKey(Quiz row);
+
+    @Select({
+            "select",
+            "id, type, content, optiona, optionb, optionc, optiond, answer, level",
+            "from quiz",
+            "where level = #{level,jdbcType=VARCHAR}",
+            "limit #{position,jdbcType=INTEGER},20"
+    })
+    @Results({
+            @Result(column = "id", property = "id", jdbcType = JdbcType.INTEGER, id = true),
+            @Result(column = "type", property = "type", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "content", property = "content", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "optiona", property = "optiona", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "optionb", property = "optionb", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "optionc", property = "optionc", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "optiond", property = "optiond", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "answer", property = "answer", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "level", property = "level", jdbcType = JdbcType.VARCHAR)
+    })
+    List<Quiz> selectQuziListByLevel(String level, int position);
 }

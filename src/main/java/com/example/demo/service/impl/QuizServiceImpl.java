@@ -14,7 +14,7 @@ public class QuizServiceImpl implements QuizService {
     QuizMapper quizMapper;
 
     @Override
-    public List<Quiz> getListByLevel(String level) {
-        return quizMapper.selectAll();
+    public List<Quiz> getListByLevel(String level, int position) {
+        return quizMapper.selectQuziListByLevel(level, position);
     }
 }

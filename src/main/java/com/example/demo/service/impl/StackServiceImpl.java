@@ -19,8 +19,8 @@ public class StackServiceImpl implements StackService {
     }
 
     @Override
-    public List<String> getBookNameByLevel(String level) {
-        return stackMapper.selectBookNameByLevel(level);
+    public List<String> getBookNameByLevel(String level, int position) {
+        return stackMapper.selectBookNameByLevel(level, position);
     }
 
     @Override
