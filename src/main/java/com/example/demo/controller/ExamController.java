@@ -19,7 +19,7 @@ public class ExamController {
     @Autowired
     ExamService examService;
 
-    @RequestMapping(value = "/rest/exam/{level}")
+    @RequestMapping(value = "/rest/exam/level/{level}")
     public Object getExamByLevel(@PathVariable("level") int level) throws IOException {
         List<Hsk> examList = examService.selectAllByLevel(level);
         /*FileOutputStream fileOutputStream = new FileOutputStream("a.json");
@@ -38,4 +38,22 @@ public class ExamController {
         return examList;
     }
 
+    @RequestMapping(value = "/rest/exam/HSK/{id}")
+    public Object getExamById(@PathVariable("id") String id) throws IOException {
+        Hsk hsk = examService.getExam(id);
+        /*FileOutputStream fileOutputStream = new FileOutputStream("a.json");
+        fileOutputStream.write(examList.get(0).getContent());
+        fileOutputStream.close();
+        BufferedReader fileInputStream = new BufferedReader(new InputStreamReader(new FileInputStream("a.json"), "GBK"));
+        StringBuilder builder = new StringBuilder();
+        int ch;
+        new String();
+        while ((ch = fileInputStream.read()) != -1) {
+            builder.append((char) ch);
+        }
+        String result = builder.toString();
+        //result = result.substring(1, result.length() - 1);
+        fileInputStream.close();*/
+        return hsk;
+    }
 }

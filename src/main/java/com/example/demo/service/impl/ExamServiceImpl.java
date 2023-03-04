@@ -17,4 +17,9 @@ public class ExamServiceImpl implements ExamService {
     public List<Hsk> selectAllByLevel(int i) {
         return hskMapper.selectAllByLevel(i);
     }
+
+    @Override
+    public Hsk getExam(String id) {
+        return hskMapper.selectByPrimaryKey(id);
+    }
 }

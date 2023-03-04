@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ExamService {
     public List<Hsk> selectAllByLevel(int i);
+
+    public Hsk getExam(String id);
 }

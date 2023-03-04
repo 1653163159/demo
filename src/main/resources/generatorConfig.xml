@@ -233,7 +233,7 @@
             <property name="selectAllOrderByClause" value="age desc,username asc"/>
             <property name="useActualColumnNames" value="true"/>
         </table>-->
-        <table tableName="composition">
+        <table tableName="word">
             <property name="constructorBased" value="false"/>
             <property name="ignoreQualifiersAtRuntime" value="false"/>
             <property name="immutable" value="false"/>

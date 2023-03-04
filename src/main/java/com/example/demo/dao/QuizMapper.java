@@ -120,7 +120,7 @@ public interface QuizMapper {
             "id, type, content, optiona, optionb, optionc, optiond, answer, level",
             "from quiz",
             "where level = #{level,jdbcType=VARCHAR}",
-            "limit #{position,jdbcType=INTEGER},20"
+            "limit #{position,jdbcType=INTEGER},10"
     })
     @Results({
             @Result(column = "id", property = "id", jdbcType = JdbcType.INTEGER, id = true),

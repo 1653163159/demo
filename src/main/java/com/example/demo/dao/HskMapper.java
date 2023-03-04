@@ -99,16 +99,13 @@ public interface HskMapper {
 
     @Select({
             "select",
-            "idhsk, level, content, answer, audio",
+            "idhsk, level",
             "from hsk",
             "where level = #{level,jdbcType=INTEGER}"
     })
     @Results({
             @Result(column="idhsk", property="idhsk", jdbcType=JdbcType.VARCHAR, id=true),
-            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
-            @Result(column="content", property="content", jdbcType=JdbcType.LONGVARBINARY),
-            @Result(column="answer", property="answer", jdbcType=JdbcType.LONGVARBINARY),
-            @Result(column="audio", property="audio", jdbcType=JdbcType.LONGVARBINARY)
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER)
     })
     List<Hsk> selectAllByLevel(int level);
 }

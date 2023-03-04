@@ -115,7 +115,7 @@ public interface StackMapper {
             "bookname",
             "from stack",
             "where level = #{level,jdbcType=VARCHAR}",
-            "limit #{position,jdbcType=INTEGER},20"
+            "limit #{position,jdbcType=INTEGER},10"
     })
     @Results({
             @Result(column = "bookname", property = "bookname", jdbcType = JdbcType.VARCHAR),
