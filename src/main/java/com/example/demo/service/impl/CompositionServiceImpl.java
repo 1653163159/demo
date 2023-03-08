@@ -16,11 +16,16 @@ public class CompositionServiceImpl implements CompositionService {
     CompositionMapper compositionMapper;
 
     @Override
-    public List<Composition> getCompositionList() {
+    public List<Composition> getCompositionAll() {
         Random random = new Random();
         int i = random.nextInt(Flags.COMPOSITION_COUNT);
         if (i > Flags.COMPOSITION_COUNT - 5)
             i -= 5;
         return compositionMapper.selectCList(i);
+    }
+
+    @Override
+    public List<Composition> getCompositionList(String level, int position) {
+        return compositionMapper.selectCList(position);
     }
 }
